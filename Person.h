@@ -22,11 +22,6 @@ private:
 
 public:
 
-    void changeMail (const string& mail)
-    {
-        this->mail=mail;
-    }
-
 
     Person(string firstName,
            string  lastName,
