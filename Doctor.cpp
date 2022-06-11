@@ -23,33 +23,19 @@ Doctor::Doctor(string firstName,
         throw invalid_argument("Number doesn't exist");
     }
 
+    if(this->Category.empty())
+        throw invalid_argument("No Category");
+
+    if(this->Degree.empty())
+        throw invalid_argument("No Degree");
+
+    if(this->Speciality.empty())
+        throw invalid_argument("No Speciality");
 }
-
-
-string Doctor::getSpeciality() const {
-    return Speciality;
-}
-
-int Doctor::getAmountOfPatients() const {
-    return AmountOfPatients;
-}
-
-string Doctor::getCategory() const {
-    return Category;
-}
-
-string Doctor::getDegree() const {
-    return Degree;
-}
-
-
 
 void Doctor::setRating(){
     AmountOfPatients+=1;
 }
-
-
-
 
 string Doctor::Info() const
 {
@@ -84,6 +70,4 @@ string Doctor::Info() const
     }
     return consultation;
 }
-
-
 
