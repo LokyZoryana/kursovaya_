@@ -12,7 +12,6 @@ class Doctor: public Person{
     private:
         string Speciality;
         int AmountOfPatients;
-        int Salary;
         string Category;
         string Degree;
         int consultation;
@@ -27,15 +26,10 @@ class Doctor: public Person{
                string country, string Speciality, int AmountOfPatients,
                string Category, string Degree);
 
-        string getSpeciality() const;
-        int getAmountOfPatients() const;
-        string getCategory() const;
-        string getDegree() const;
 
         int Consultation();
         void setRating();
 
 };
-
 
 #endif //UNTITLED4_DOCTOR_H
