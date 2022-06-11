@@ -15,9 +15,9 @@ Soldier::Soldier(string firstName,
                  string country, enum Rank rank, int AmountOfFights,
                  int LifeTime, string Weapon, TypeOfService typeOfService):
 
-        Person(move(firstName), move(lastName),
-               age, height, weight, move(gender),
-               move(mail), move(city), move(country)),
+        Person((firstName), (lastName),
+               age, height, weight, (gender),
+               (mail), (city), (country)),
         rank(rank),
         AmountOfFights(AmountOfFights),
         LifeTime(LifeTime),
@@ -29,9 +29,6 @@ Soldier::Soldier(string firstName,
     {
         throw invalid_argument("Wrong amount of fights");
     }
-
-
-
 
     if(this->Weapon.empty())
         throw invalid_argument("No Weapon");
@@ -66,20 +63,6 @@ string Soldier::getTypeOfService() const {
     return stringTypeOfService[typeOfService];
 }
 
-
-
-
-int Soldier::getAmountOfFights() const {
-    return AmountOfFights;
-}
-
-string Soldier::getWeapon() const {
-    return Weapon;
-}
-
-int Soldier::getLifeTime() const {
-    return LifeTime;
-}
 
 void Soldier::NewFight() {
     if(typeOfService==Spare)
@@ -123,3 +106,4 @@ string Soldier::Info() const
     return out;
 
 }
+
