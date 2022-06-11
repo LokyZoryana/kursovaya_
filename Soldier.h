@@ -49,9 +49,6 @@ public:
 
     string getRank() const;
     string getTypeOfService() const;
-    int getAmountOfFights() const;
-    string getWeapon() const;
-    int getLifeTime() const;
 
 
 
