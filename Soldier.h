@@ -33,6 +33,7 @@ private:
     string Weapon;
     int LifeTime;
     int AmountOfFights;
+    void RecountRank();
 
 
 
