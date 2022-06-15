@@ -4,7 +4,7 @@
 
 #include "Doctor.h"
 #include <stdexcept>
-
+using std::move, std::invalid_argument;
 
 Doctor::Doctor(string firstName,
                string  lastName,
@@ -13,11 +13,12 @@ Doctor::Doctor(string firstName,
                string country, string Speciality, int AmountOfPatients,
                string Category, string Degree):
 
-        Person(firstName, lastName, age, height, weight, gender, mail, city, country),
-        Speciality(Speciality),
+        Person(move(firstName), move(lastName), age, height, weight, move(gender),
+               move(mail), move(city), move(country)),
+        Speciality(move (Speciality)),
         AmountOfPatients(AmountOfPatients),
-        Category(Category),
-        Degree(Degree)
+        Category(move(Category)),
+        Degree(move(Degree))
 {if (AmountOfPatients<0)
     {
         throw invalid_argument("Number doesn't exist");
@@ -70,4 +71,6 @@ string Doctor::Info() const
     }
     return consultation;
 }
+
+
 
