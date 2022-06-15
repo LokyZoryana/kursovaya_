@@ -9,6 +9,9 @@ using namespace std;
 int main()
 {
     try{
+
+        cout<< "Doctors"<<endl;
+
         Doctor doctor1("Irina", "Nikolaevna", 30, 175, 60, "female","chdghch@gmail.com",
                        "Odesa", "Ukraine", "Gynecology",300 ,"Gynecologist", "First");
         doctor1.Consultation();
@@ -45,6 +48,8 @@ int main()
 
 
 
+        cout<< "Soldiers"<<endl;
+
         Soldier soldier1("Ivan", "Borisovich", 50, 200, 60, "male","chdghch@gmail.com",
                          "Chornobaibka", "Ukraine", First, 3, 24,"Gun", Emergency);
 
@@ -65,9 +70,10 @@ int main()
 
 
         Soldier soldier2("Victor", "Igorevich", 60, 180, 60, "male","wefesfsef@gmail.com",
-                         "Kruty", "Ukraine", First, 3, 30,"Gun", Contract);
+                         "Kruty", "Ukraine", Second, 3, 30,"Gun", Contract);
 
         soldier2.GoSpare();
+        soldier2.NewFight();
         soldier2.getRank();
         cout<< soldier2.Info();
 
@@ -83,7 +89,7 @@ int main()
 
 
         Soldier soldier3("Anton", "Petrovich", 20, 188, 70, "male","fbzszgga@gmail.com",
-                         "Odessa", "Ukraine", Second, 6, 14,"Gun", Spare);
+                         "Odessa", "Ukraine", First, 6, 14,"Gun", Spare);
 
         soldier3.NewFight();
         soldier3.GoSpare();
