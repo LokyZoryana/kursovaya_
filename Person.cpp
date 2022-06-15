@@ -32,6 +32,26 @@ Person::Person(string firstName,
     {
         throw invalid_argument("Weight doesn't exist");
     }
+    if (this->firstName.empty())
+
+        throw invalid_argument("No name");
+
+    if(this->lastName.empty())
+        throw invalid_argument("No Last Name");
+
+    if(this->gender.empty())
+        throw invalid_argument("No gender");
+
+    if(this->mail.empty())
+        throw invalid_argument("No mail adres");
+
+    if(this->city.empty())
+        throw invalid_argument("No city");
+
+    if(this->country.empty())
+        throw invalid_argument("No country");
+
+
 }
 
 
@@ -116,4 +136,3 @@ string Person::Info() const
           "\nCounty - " + getcountry();
     return out;
 }
-
