@@ -15,9 +15,9 @@ Soldier::Soldier(string firstName,
                  string country, enum Rank rank, int AmountOfFights,
                  int LifeTime, string Weapon, TypeOfService typeOfService):
 
-        Person((firstName), (lastName),
-               age, height, weight, (gender),
-               (mail), (city), (country)),
+        Person(move(firstName), move(lastName),
+               age, height, weight, move(gender),
+               move(mail), move(city), move(country)),
         rank(rank),
         AmountOfFights(AmountOfFights),
         LifeTime(LifeTime),
@@ -43,36 +43,28 @@ string Soldier::getRank() const {
     string stringRanks[]={"First","Second","Third","Fourth",
                           "Fifth" };
 
-    for(int i=0; i<stringRanks->size(); i++ ){
-
-        if(AmountOfFights<0) {
-
-            throw invalid_argument("Wrong amount of fights");
-        }
-
-    }
-
     return stringRanks[rank];
 }
+
+
 string Soldier::getTypeOfService() const {
     string stringTypeOfService[] = {"Emergency", "Spare", "Contract"};
 
-
-    for (int i = 0; i < stringTypeOfService->size(); i++) {}
 
     return stringTypeOfService[typeOfService];
 }
 
 
 void Soldier::NewFight() {
+
     if(typeOfService==Spare)
         return;
 
     AmountOfFights+=1;
-    if(0<=AmountOfFights && AmountOfFights<=2)
+    if(0<=AmountOfFights && AmountOfFights<=3)
         rank=First;
 
-    if(3<=AmountOfFights && AmountOfFights<=6)
+    if(4<=AmountOfFights && AmountOfFights<=6)
         rank=Second;
 
     if(7<=AmountOfFights && AmountOfFights<=12)
@@ -83,6 +75,7 @@ void Soldier::NewFight() {
 
     if(21<=AmountOfFights)
         rank=Fifth;
+
 
 }
 
@@ -106,4 +99,3 @@ string Soldier::Info() const
     return out;
 
 }
-
